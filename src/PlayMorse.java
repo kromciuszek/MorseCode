@@ -19,7 +19,8 @@ public class PlayMorse {
             clip.open(AudioSystem.getAudioInputStream(sound));
             clip.start();
 
-            Thread.sleep(clip.getMicrosecondLength()/1000);
+            long sleepTime = clip.getMicrosecondLength()/1000;
+            Thread.sleep(sleepTime + 50); // + 50 just to make bigger pause after every sound
 
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -29,6 +30,7 @@ public class PlayMorse {
    public void playString(String morse) {
         char[] chars = morse.toCharArray();
 
+        // play dot, dash or make pause
         for (char c : chars) {
             if (c == '.') {
                 playSound(shortSound);
@@ -38,7 +40,7 @@ public class PlayMorse {
                 playSound(longSound);
             } else {
                 try {
-                    Thread.sleep(100);
+                    Thread.sleep(250);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

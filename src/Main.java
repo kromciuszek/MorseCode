@@ -5,9 +5,9 @@ public class Main {
         MorseDictionary dictionary = new MorseDictionary();
         PlayMorse playMorse = new PlayMorse();
 
-        String name = "K";
+        String name = "sos";
         String morse = dictionary.translate(name);
-
+        System.out.println(morse);
         playMorse.playString(morse);
 
 
