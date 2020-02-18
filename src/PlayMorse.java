@@ -11,7 +11,6 @@ public class PlayMorse {
 
     }
 
-
     private void playSound(File sound) {
 
         try {
@@ -20,7 +19,7 @@ public class PlayMorse {
             clip.start();
 
             long sleepTime = clip.getMicrosecondLength()/1000;
-            Thread.sleep(sleepTime + 50); // + 50 just to make bigger pause after every sound
+            Thread.sleep(sleepTime + 90); // just to make bigger pause after every sound
 
         } catch (Exception e) {
             e.printStackTrace(System.out);
@@ -40,7 +39,7 @@ public class PlayMorse {
                 playSound(longSound);
             } else {
                 try {
-                    Thread.sleep(250);
+                    Thread.sleep(200);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
